@@ -7,17 +7,14 @@
 ###############################################################################
 # GOAL:
 # Aim of this script is to export the number of occurrence records of each OBIS
-# dataset and the year of the publication.
+# dataset and the year of the publication. The advantage of AWK here is that
+# the dataset can remain in zipped format and also the low requirements of RAM.
 ###############################################################################
 #
-# usage: ./obis_historical_data.awk obis_occurrence202105181955.csv \
-#           obis_dataset_year.tsv
+# usage: gunzip -c obis_20220114.csv.zip | ./obis_historical_data.awk - > \
+#        obis_dataset_year.tsv
 #
 ###############################################################################
-#
-#
-
-#
 
 BEGIN{
 
