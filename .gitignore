@@ -1,0 +1,5 @@
+# Files to ignore
+*.zip
+*.tsv
+*.DS_Store
+*.swp
