@@ -11,7 +11,7 @@
 # the dataset can remain in zipped format and also the low requirements of RAM.
 ###############################################################################
 #
-# usage: gunzip -c obis_20220114.csv.zip | ./obis_historical_data.awk - > \
+# usage: gunzip -c obis_20220114.csv.zip | ./obis_occurrences_datasets.awk - > \
 #        obis_dataset_year.tsv
 #
 ###############################################################################
