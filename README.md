@@ -16,3 +16,22 @@ identifiers.
 Lastly, the publication of these data to public repositories, like OBIS 
 and GBIF, is the last step for their rescue and their synthesis with 
 current data.
+
+### OBIS
+
+OBIS aggragates data from medOBIS and eurOBIS among others. Is the 
+realisation of the Census of Marine Life that originated at the late
+90s. 
+
+To download the full dataset of OBIS the command is the following:
+
+```
+wget https://obis-datasets.ams3.digitaloceanspaces.com/exports/obis_20220114.csv.zip
+
+```
+
+The data used here are `obis_20220114.csv.zip`. For more information
+please visit [OBIS Data Access](https://obis.org/manual/access/)
+
+The zipped file is about 8gb in size. For sake of speed and storage
+we used separate scripts, written in AWK, for some statistics.
