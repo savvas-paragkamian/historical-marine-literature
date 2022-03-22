@@ -35,3 +35,12 @@ please visit [OBIS Data Access](https://obis.org/manual/access/)
 
 The zipped file is about 8gb in size. For sake of speed and storage
 we used separate scripts, written in AWK, for some statistics.
+
+### BHL
+
+In order to amass the historical marine literature that is digitised we 
+downloaded content from the Biodiversity Helitage Library.
+
+Here are the data available for 
+[download](https://about.biodiversitylibrary.org/tools-and-services/developer-and-data-tools/)
+
