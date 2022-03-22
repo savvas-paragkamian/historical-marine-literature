@@ -21,20 +21,30 @@ BEGIN{
 FS=","
 
 }
+# Columns used in the script:
+# $8=year, $9=scientific name, $25=taxonomic rank
+# $33 phylum name
+#
 (NR>1 && length($8)!=0 && $8<1961){
-species_name[$9]++ # scientific name of species as in WoRMS
-phyla_species[$9]=$33 #33 column is phyla
 
+    if ($25=="Species"){
+
+        species_name[$9]++ # count the occurrences
+        # of scientific name of species
+        phyla_species[$9]=$33 # keep the phylum of species
+    }
 }
 END{
 
 for (s in phyla_species){
 
-    phyla[phyla_species[s]]++
-    phyla_occurrences[phyla_species[s]]+=species_name[s]
+    phyla[phyla_species[s]]++ # count species for each phylum
+    phyla_occurrences[phyla_species[s]]+=species_name[s] #count occurrencies of
+    # phylum species 
 
     }
-
+    # print a file with fields: 
+    # $1=phylum name, $2=number species, $3=number of species occurrencies
 for (i in phyla){
 
         print i "\t" phyla[i] "\t" phyla_occurrences[i]
