@@ -14,3 +14,38 @@
 #        obis_taxonomy_summary.tsv
 #
 ###############################################################################
+
+BEGIN{
+    
+FS="\t"
+
+IGNORECASE=1
+
+}
+#file title.txt
+(NR>1 && ARGIND==1){
+    
+    if ($8<1961 && $8!=""){
+        year=$8
+        title_year[$1]=$8
+        
+        if ($4 ~ /\s(marine|sea|ocean)\s/){
+
+            title[$1]=$4
+
+        }
+    }
+}
+# file subject.txt
+(NR>1 && ARGIND==2){
+    if ($2 ~ /marine/ && ($1 in title_year)){
+        subject[$1]=$2
+    }
+}
+END{
+
+for (t in title){
+    print t "\t" title_year[t] "\t" title[t] "\t" subject[t]
+
+    }
+}

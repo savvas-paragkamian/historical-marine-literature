@@ -49,4 +49,4 @@ wget http://www.biodiversitylibrary.org/data/data.zip
 ```
 
 From the schema and the BHL [data model](https://github.com/gbhl/bhl-us/tree/master/Documentation/DataModel) 
-we perform searches on Items and Subjects.
+we perform searches on Title, Items and Subjects.
