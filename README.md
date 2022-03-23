@@ -44,3 +44,8 @@ downloaded content from the Biodiversity Helitage Library.
 Here are the data available for 
 [download](https://about.biodiversitylibrary.org/tools-and-services/developer-and-data-tools/)
 
+```
+wget http://www.biodiversitylibrary.org/data/data.zip
+```
+
+
