@@ -1,7 +1,7 @@
 #! /usr/bin/gawk -f
 #
 ###############################################################################
-# script name: obis_historical_data.awk
+# script name: obis_taxonomy_summary.awk
 # developed by: Savvas Paragkamian
 # framework: EMODnet Biology
 ###############################################################################
