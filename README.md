@@ -1,13 +1,12 @@
 ## Historical marine biodiversity literature
 
-In this repo are the some analysis and queries to quantify the historical 
-marine literature about biodiversity which hasn't been curated but is 
-digitised.
+This repository hosts scripts and queries in order to quantify the digitised
+historical marine literature about biodiversity which hasn't been curated.
 
 The goal is to provide a rough estimate of the work ahead towards the 
 marine biodiversity document rescue.
 
-Currently, the road to rescue data is far ahead from digitisation which
+The road to rescue data lies far ahead from digitisation which
 still is the first crutial step. Three subsequent but equally hard tasks
 remain. The transcription of the text in these documents, the 
 recognition of the containing entities and their mapping to standardised
@@ -44,9 +43,25 @@ downloaded content from the Biodiversity Helitage Library.
 Here are the data available for 
 [download](https://about.biodiversitylibrary.org/tools-and-services/developer-and-data-tools/)
 
+**We downloaded the data on 22/3/2022**
 ```
 wget http://www.biodiversitylibrary.org/data/data.zip
 ```
 
 From the schema and the BHL [data model](https://github.com/gbhl/bhl-us/tree/master/Documentation/DataModel) 
 we perform searches on Title, Items and Subjects.
+
+Languages
+
+```
+gawk -F"\t" '{a[$10]++}END{for (i in a){print i "\t" a[i]}}' title.txt | sort -n -k2
+```
+#### Summary
+
+BHL hosts 170079 distinct titles assigned to 42212 distinct subjects to a total
+65 million pages. 
+From these items, the 144300 are published during the period 1472 - 1960. 
+
+#### Queries
+
+
