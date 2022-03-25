@@ -29,7 +29,6 @@ keywords["fisheries"]=1
 }
 # file subject.txt
 (NR>1 && ARGIND==1){
-    subject_name[$1]=$2
 
     if ($2 ~ /marine/){
         subject_search[$1]=$2
@@ -54,9 +53,6 @@ keywords["fisheries"]=1
                 if (tolower(title_words[i]) in keywords){
                     title_search[$1]=$4
                     title_language[$1]=$10
-                    #print title_words[i]
-                    #print $4
-
                 }
             }
         }
