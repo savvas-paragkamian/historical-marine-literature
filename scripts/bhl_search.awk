@@ -39,12 +39,20 @@ IGNORECASE=1
         if ($1 in subject_search){
             title_search[$1]=$4
             title_language[$1]=$10
-            next
         }
         
-        else if ($4 ~ /\s(marine|sea|ocean)\s/){
-            title_search[$1]=$4
-            title_language[$1]=$10
+        else {
+            split($4, title_words, " ")
+            for (i in title_words){
+
+                if (tolower(title_words[i])=="sea"){
+                    title_search[$1]=$4
+                    title_language[$1]=$10
+                    print title_words[i]
+                    print $4
+
+                }
+            }
         }
     }
 }
