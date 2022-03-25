@@ -20,11 +20,17 @@ BEGIN{
 FS="\t"
 
 IGNORECASE=1
+#keywords: marine, sea, ocean, fisheries, fishery..
+keywords["sea"]=1
+keywords["marine"]=1
+keywords["ocean"]=1
+keywords["fisheries"]=1
 
 }
 # file subject.txt
 (NR>1 && ARGIND==1){
     subject_name[$1]=$2
+
     if ($2 ~ /marine/){
         subject_search[$1]=$2
     }
@@ -45,11 +51,11 @@ IGNORECASE=1
             split($4, title_words, " ")
             for (i in title_words){
 
-                if (tolower(title_words[i])=="sea"){
+                if (tolower(title_words[i]) in keywords){
                     title_search[$1]=$4
                     title_language[$1]=$10
-                    print title_words[i]
-                    print $4
+                    #print title_words[i]
+                    #print $4
 
                 }
             }
@@ -75,7 +81,7 @@ print "itemID" FS "titleID" FS "year" FS "title" FS "subject" FS "language" FS "
     for (i in items_search){
     
         print i FS items_search[i] FS title_year[items_search[i]] FS title_search[items_search[i]] \
-        FS subject_name[items_search[i]] FS title_language[items_search[i]] FS pages[i]
+        FS subject_search[items_search[i]] FS title_language[items_search[i]] FS pages[i]
 
     }
 }
