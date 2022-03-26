@@ -55,6 +55,18 @@ The digitised document is the item. Additionaly, each title is assigned with
 subjects. The are not standardised. Each Item also has a pages table with 
 information per page.
 
+In the BHL schema it is noted that :
+
+> NOTE: This export DOES NOT include all of the pages in the BHL database.
+> It only contains pages on which taxonomic names have been identified.
+
+#### Summary
+
+BHL hosts 170079 distinct titles assigned to 42212 distinct subjects to a total
+65 million pages. 
+From these items, the 144300 are published during the period 1472 - 1960. 
+
+##### Languages of BHL
 ```
 gawk -F"\t" '{a[$10]++}END{for (i in a){print i "\t" a[i]}}' title.txt | sort -n -k2
 ```
@@ -75,11 +87,32 @@ FRE     5448
 GER     5845
 ENG     142500
 ```
-#### Summary
 
-BHL hosts 170079 distinct titles assigned to 42212 distinct subjects to a total
-65 million pages. 
-From these items, the 144300 are published during the period 1472 - 1960. 
+##### Digitisation efforts summarised per year
+
+```
+gawk -F"\t" '(NR>1){a=gensub(/^([0-9]{4})-(.+)/,"\\1","g", $16); year[a]++}END{for (i in year){print i "\t" year[i]}}' item.txt | sort -n -k1
+```
+
+```
+Year    #Items
+2006    1725
+2008    24035
+2009    45524
+2010    14735
+2011    10357
+2012    13107
+2013    13437
+2014    31350
+2015    16499
+2016    20967
+2017    26713
+2018    19237
+2019    13890
+2020    12306
+2021    11295
+2022    3336
+```
 
 #### Queries
 

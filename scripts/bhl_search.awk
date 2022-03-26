@@ -65,6 +65,9 @@ keywords["fisheries"]=1
 (NR>1 && ARGIND==3){
     if ($2 in title_search){
         items_search[$1]=$2
+        #keep the year of upload to BHL
+        creation_year=gensub(/^([0-9]{4})-(.+)/,"\\1","g", $16)
+        year_BHL[$1]=creation_year
     }
 }
 #file page.txt, this is a big file.
@@ -76,11 +79,12 @@ keywords["fisheries"]=1
 }
 END{
 
-print "itemID" FS "titleID" FS "year" FS "title" FS "subject" FS "language" FS "pages"
+print "itemID" FS "titleID" FS "year" FS "title" FS "subject" FS "language" FS "pages" FS "BHL_upload"
+
     for (i in items_search){
     
         print i FS items_search[i] FS title_year[items_search[i]] FS title_search[items_search[i]] \
-        FS subject_search[items_search[i]] FS title_language[items_search[i]] FS pages[i]
+        FS subject_search[items_search[i]] FS title_language[items_search[i]] FS pages[i] FS year_BHL[i]
 
     }
 }
