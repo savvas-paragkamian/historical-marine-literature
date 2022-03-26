@@ -19,7 +19,6 @@ BEGIN{
     
 FS="\t"
 
-IGNORECASE=1
 #keywords: marine, sea, ocean, fisheries, fishery..
 keywords["sea"]=1
 keywords["marine"]=1
@@ -27,14 +26,16 @@ keywords["ocean"]=1
 keywords["fisheries"]=1
 
 }
-# file subject.txt
+# file subject.txt, $2 is the name of the subject and $1 is the titleID. 
+# Multiple subjects can have the same subject.
 (NR>1 && ARGIND==1){
 
-    if ($2 ~ /marine/){
+    if (tolower($2) ~ /marine/){
         subject_search[$1]=$2
     }
 }
-#file title.txt
+# file title.txt. The $1 is the titleID, $3=title name, $8=year, $10=language
+# In this file is the main search functionality.
 (NR>1 && ARGIND==2){
     
     if ($8<1961 && $8!=""){
@@ -60,12 +61,14 @@ keywords["fisheries"]=1
 }
 #file item.txt, here store the items of each title in BHL. An Item can have 
 # multiple title identifiers.
+# We parse this in order to use it later with the pages.
 (NR>1 && ARGIND==3){
     if ($2 in title_search){
         items_search[$1]=$2
     }
 }
 #file page.txt, this is a big file.
+# We parse this file to count the number of pages of each item.
 (NR>1 && ARGIND==4){
     if ($2 in items_search){
         pages[$2]++

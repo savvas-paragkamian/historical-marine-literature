@@ -50,11 +50,30 @@ wget http://www.biodiversitylibrary.org/data/data.zip
 
 From the schema and the BHL [data model](https://github.com/gbhl/bhl-us/tree/master/Documentation/DataModel) 
 we perform searches on Title, Items and Subjects.
-
-Languages
+Items are the bound objects of BHL, so a title can have multiple items. 
+The digitised document is the item. Additionaly, each title is assigned with
+subjects. The are not standardised. Each Item also has a pages table with 
+information per page.
 
 ```
 gawk -F"\t" '{a[$10]++}END{for (i in a){print i "\t" a[i]}}' title.txt | sort -n -k2
+```
+These are the languages with most titles:
+```
+RUS     133
+DAN     171
+SWE     232
+POR     280
+UND     290
+JPN     334
+DUT     346
+ITA     733
+SPA     751
+CHI     894
+LAT     2148
+FRE     5448
+GER     5845
+ENG     142500
 ```
 #### Summary
 
