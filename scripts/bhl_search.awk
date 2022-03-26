@@ -74,17 +74,25 @@ keywords["fisheries"]=1
 # We parse this file to count the number of pages of each item.
 (NR>1 && ARGIND==4){
     if ($2 in items_search){
-        pages[$2]++
+        pages_id[$2][$1]
+        page_item[$1]=$2
+    }
+}
+(NR>1 && ARGIND==5){
+    if ($3 in page_item){
+        item_taxa[page_item[$1]][$2]=1
     }
 }
 END{
 
-print "itemID" FS "titleID" FS "year" FS "title" FS "subject" FS "language" FS "pages" FS "BHL_upload"
+print "itemID" FS "titleID" FS "year" FS "title" FS "subject" FS "taxa_identified" \
+      FS "language" FS "pages" FS "BHL_upload"
 
     for (i in items_search){
     
         print i FS items_search[i] FS title_year[items_search[i]] FS title_search[items_search[i]] \
-        FS subject_search[items_search[i]] FS title_language[items_search[i]] FS pages[i] FS year_BHL[i]
+            FS subject_search[items_search[i]] FS length(item_taxa[i]) FS title_language[items_search[i]] \
+            FS length(pages_id[i]) FS year_BHL[i]
 
     }
 }
