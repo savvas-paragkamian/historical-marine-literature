@@ -4,8 +4,8 @@
 * [OBIS](#obis)
 * [BHL](#bhl)
 * [Summary-BHL](#summary)
-* [Summary-BHL](#summary)
 * [Marine-biodiversity-BHL](#marine-biodiversity-in-bhl)
+* [Conclusions](#conclusions)
 
 ## Intoduction
 This repository hosts scripts and queries in order to quantify the digitised
@@ -152,5 +152,8 @@ gawk -F"\t" '(NR>1){a=gensub(/^([0-9]{4})-(.+)/,"\\1","g", $4); year[a]++}END{fo
 
 ### Marine biodiversity in BHL
 
+
+
+## Conclusions
 
 
