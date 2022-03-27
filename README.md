@@ -8,6 +8,7 @@
 * [Conclusions](#conclusions)
 
 ## Intoduction
+
 This repository hosts scripts and queries in order to quantify the digitised
 historical marine literature about biodiversity which hasn't been curated.
 
@@ -152,8 +153,76 @@ gawk -F"\t" '(NR>1){a=gensub(/^([0-9]{4})-(.+)/,"\\1","g", $4); year[a]++}END{fo
 
 ### Marine biodiversity in BHL
 
+We developed the script [bhl_search.awk](https://github.com/savvas-paragkamian/historical-marine-literature/blob/main/scripts/bhl_search.awk)
+which outputs a tab-separated file with 9 fields:
+
+```
+itemID titleID item_year title subject taxa language pages BHL_upload
+```
+
+to run the script :
+
+```
+./scripts/bhl_search.awk bhl/Data/subject.txt bhl/Data/title.txt bhl/Data/item.txt bhl/Data/page.txt > bhl_search_results.txt
+```
+This searches for items (books, reports etc.) that either have a subject that 
+contains the keyword *marine* or they contain in their title 
+the keywords *marine*, *ocean*, *fisheries*, *sea*. 
+In addition, all returned item are published before 1960.
+
+This command on results summarises the subsequent statistics:
+```
+gawk -F"\t" '(NR>1 && $6>200){item[$1]=1; pages+=$8; lang[$7]++; year_bhl[$9]++}END{print length(item) RS pages; for (i in lang){print i FS lang[i]}; for (y in year_bhl){print y FS year_bhl[y]}}' bhl_search_results.txt
+```
+
+This search resulted in 1627 diffent items that contain at least 100 taxa as
+identified automaticaly from [gnfinder of Global Names](https://globalnames.org).
+
+These items have 648927 pages and 10 different languages, the 60% being English.
+
+Languages summary:
+
+```
+language    number of items
+DUT     1
+SWE     1
+SPA     3
+DAN     6
+NOR     9
+ITA     12
+LAT     14
+FRE     74
+GER     117
+ENG     982
+no-lang 7
+```
+
+The first datasets related to marine biodiversity was uploaded to BHL on 2008.
+
+```
+year    number of items
+2008    349
+2009    428
+2010    75
+2011    43
+2012    88
+2013    40
+2014    24
+2015    31
+2016    49
+2017    31
+2018    43
+2019    21
+2020    1
+2021    3
+```
 
 
 ## Conclusions
 
-
+A lot of effort on the digitisation processes of these valuable and indespensable
+documents has being realised. Yet the rescue of the marine biodiversity data 
+of these documents is far from complete. Substantial effort is required to 
+compile these data to public repositories like [OBIS](https://obis.org). The 
+rescue process requires human curation, although current development of Information
+Extraction tools that facilitate Named Entity Recognition can accelarate this process.
