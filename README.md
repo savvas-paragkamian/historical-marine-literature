@@ -172,49 +172,52 @@ In addition, all returned item are published before 1960.
 
 This command on results summarises the subsequent statistics:
 ```
-gawk -F"\t" '(NR>1 && $6>200){item[$1]=1; pages+=$8; lang[$7]++; year_bhl[$9]++}END{print length(item) RS pages; for (i in lang){print i FS lang[i]}; for (y in year_bhl){print y FS year_bhl[y]}}' bhl_search_results.txt
+gawk -F"\t" '(NR>1 && $6>99){item[$1]=1; pages+=$8; lang[$7]++; year_bhl[$9]++}END{print length(item) RS pages; for (i in lang){print i FS lang[i]}; for (y in year_bhl){print y FS year_bhl[y]}}' bhl_search_results.txt
 ```
 
 This search resulted in 1627 diffent items that contain at least 100 taxa as
 identified automaticaly from [gnfinder of Global Names](https://globalnames.org).
 
-These items have 648927 pages and 10 different languages, the 60% being English.
+These items have 648927 pages and 10 different languages, the 80% being English.
 
 Languages summary:
 
 ```
 language    number of items
-DUT     1
+JPN     1
+POR     1
 SWE     1
+DUT     2
 SPA     3
-DAN     6
-NOR     9
-ITA     12
-LAT     14
-FRE     74
-GER     117
-ENG     982
-no-lang 7
+DAN     8
+NOR     12
+ITA     15
+LAT     21
+FRE     111
+GER     153
+ENG     1289
+no-lang 10
 ```
 
 The first datasets related to marine biodiversity was uploaded to BHL on 2008.
 
 ```
 year    number of items
-2008    349
-2009    428
-2010    75
-2011    43
-2012    88
-2013    40
-2014    24
-2015    31
-2016    49
-2017    31
-2018    43
-2019    21
-2020    1
-2021    3
+2008    431
+2009    568
+2010    87
+2011    61
+2012    114
+2013    61
+2014    32
+2015    43
+2016    66
+2017    50
+2018    79
+2019    27
+2020    2
+2021    5
+2022    1
 ```
 
 
