@@ -35,14 +35,65 @@ To download the full dataset of OBIS the command is the following:
 
 ```
 wget https://obis-datasets.ams3.digitaloceanspaces.com/exports/obis_20220114.csv.zip
-
 ```
 
 The data used here are `obis_20220114.csv.zip`. For more information
 please visit [OBIS Data Access](https://obis.org/manual/access/)
 
 The zipped file is about 8gb in size. For sake of speed and storage
-we used separate scripts, written in AWK, for some statistics.
+we used separate scripts, written in AWK, for statistics.
+
+Script [obis_occurrences_datasets.awk](https://github.com/savvas-paragkamian/historical-marine-literature/blob/main/scripts/obis_occurrences_datasets.awk)
+returns a tab-separeted file with columns : year number_datasets number_occurrences.
+
+So, our analysis showed that in OBIS there are 223 datasets that contain 1600038
+in the period 1753-1960. 
+
+Using the script [obis_taxonomy_summary.awk](https://github.com/savvas-paragkamian/historical-marine-literature/blob/main/scripts/obis_taxonomy_summary.awk)
+we extract the phylum statistics of OBIS datasets before 1960.
+
+```
+phylum          number_species  occurrencies
+Amoebozoa       1       1
+Bigyra          1       1
+Cryptophyta     3       629
+Euglenozoa      3       35
+Heliozoa        3       55
+Xenacoelomorpha 3       3
+Priapulida      4       483
+Tardigrada      4       9
+Phoronida       6       30
+Acanthocephala  7       14
+Entoprocta      11      49
+Cercozoa        13      552
+Kinorhyncha     14      35
+Gastrotricha    15      55
+Ctenophora      17      2809
+Rotifera        20      3248
+Hemichordata    29      255
+Chaetognatha    39      6766
+Radiozoa        43      1396
+Brachiopoda     44      332
+Sipuncula       59      482
+Haptophyta      72      7987
+Nemertea        95      737
+Cyanobacteria   119     2550
+Nematoda        126     318
+Ciliophora      163     15619
+Platyhelminthes 212     499
+Myzozoa 488     113907
+Ochrophyta      844     125818
+Bryozoa 1036    8194
+Foraminifera    1275    34453
+Annelida        2284    27864
+Porifera        2941    11220
+Cnidaria        3357    43860
+Echinodermata   3368    40842
+Arthropoda      8816    252168
+Mollusca        8993    101542
+Chordata        10564   674700
+no-phylum        1298    17034
+```
 
 ## BHL
 
@@ -220,12 +271,15 @@ year    number of items
 2022    1
 ```
 
-
 ## Conclusions
 
 A lot of effort on the digitisation processes of these valuable and indespensable
 documents has being realised. Yet the rescue of the marine biodiversity data 
-of these documents is far from complete. Substantial effort is required to 
-compile these data to public repositories like [OBIS](https://obis.org). The 
-rescue process requires human curation, although current development of Information
-Extraction tools that facilitate Named Entity Recognition can accelarate this process.
+of these documents is far from complete. As the resuts show  OBIS holds around 225 
+datasets published before 1960 yet BHL holds more that 1600 digitised documents
+containing more than 100 taxa. Of course there are many more datasets that are
+still not digitised, thus remaining vulnurable to extiction. 
+Hence, substantial effort is required to compile these data to public 
+repositories like [OBIS](https://obis.org). The rescue process requires human 
+curation, although current development of Information Extraction tools that 
+facilitate Named Entity Recognition can accelarate this process.
