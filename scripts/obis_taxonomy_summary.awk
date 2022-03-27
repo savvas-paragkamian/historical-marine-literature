@@ -10,10 +10,19 @@
 # historical data. The advantage of AWK here is that
 # the dataset can remain in zipped format and also the low requirements of RAM.
 ###############################################################################
-#
-# usage: gunzip -c obis_20220114.csv.zip | ./obis_taxonomy_summary.awk - > \
-#        obis_taxonomy_summary.tsv
-#
+# usage:
+# gunzip -c obis_20220114.csv.zip | ./obis_taxonomy_summary.awk - > \
+# obis_taxonomy_summary.tsv
+###############################################################################
+# output:
+# a tab seperated file with the following columns
+# $1=phylum name, $2=number species, $3=number of species occurrencies
+###############################################################################
+# requirements:
+# GNU Awk 4.1.4 or higher
+# RAM ~ 4gb
+# runs in 2 CPU threads
+# time ~ 13 minutes
 ###############################################################################
 
 BEGIN{

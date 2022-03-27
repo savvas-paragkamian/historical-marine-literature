@@ -10,10 +10,19 @@
 # dataset and the year of the publication. The advantage of AWK here is that
 # the dataset can remain in zipped format and also the low requirements of RAM.
 ###############################################################################
-#
-# usage: gunzip -c obis_20220114.csv.zip | ./obis_occurrences_datasets.awk - > \
-#        obis_dataset_year.tsv
-#
+# usage: 
+# gunzip -c obis_20220114.csv.zip | ./obis_occurrences_datasets.awk - > \
+# obis_dataset_year.tsv
+j##############################################################################
+# output:
+# a tab seperated file with the following columns
+# year number_datasets number_occurrences
+###############################################################################
+# requirements:
+# GNU Awk 4.1.4 or higher
+# RAM ~ 4gb
+# runs in 2 CPU threads
+# time ~ 13 minutes
 ###############################################################################
 
 BEGIN{
