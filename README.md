@@ -1,5 +1,13 @@
-## Historical marine biodiversity literature
+# Historical marine biodiversity literature
 
+* [Introduction](#introduction)
+* [OBIS](#obis)
+* [BHL](#bhl)
+* [Summary-BHL](#summary)
+* [Summary-BHL](#summary)
+* [Marine-biodiversity-BHL](#marine-biodiversity-in-bhl)
+
+## Intoduction
 This repository hosts scripts and queries in order to quantify the digitised
 historical marine literature about biodiversity which hasn't been curated.
 
@@ -16,7 +24,7 @@ Lastly, the publication of these data to public repositories, like OBIS
 and GBIF, is the last step for their rescue and their synthesis with 
 current data.
 
-### OBIS
+## OBIS
 
 OBIS aggragates data from medOBIS and eurOBIS among others. Is the 
 realisation of the Census of Marine Life that originated at the late
@@ -35,7 +43,7 @@ please visit [OBIS Data Access](https://obis.org/manual/access/)
 The zipped file is about 8gb in size. For sake of speed and storage
 we used separate scripts, written in AWK, for some statistics.
 
-### BHL
+## BHL
 
 In order to amass the historical marine literature that is digitised we 
 downloaded content from the Biodiversity Helitage Library.
@@ -60,13 +68,16 @@ In the BHL schema it is noted that :
 > NOTE: This export DOES NOT include all of the pages in the BHL database.
 > It only contains pages on which taxonomic names have been identified.
 
-#### Summary
+### Summary
+
+**This chapter is about ALL BHL contents**
 
 BHL hosts 170079 distinct titles assigned to 42212 distinct subjects to a total
 65 million pages. 
 From these items, the 144300 are published during the period 1472 - 1960. 
 
-##### Languages of BHL
+#### Languages of BHL
+
 ```
 gawk -F"\t" '{a[$10]++}END{for (i in a){print i "\t" a[i]}}' title.txt | sort -n -k2
 ```
@@ -88,7 +99,7 @@ GER     5845
 ENG     142500
 ```
 
-##### Digitisation efforts summarised per year
+#### Digitisation efforts summarised per year
 
 ```
 gawk -F"\t" '(NR>1){a=gensub(/^([0-9]{4})-(.+)/,"\\1","g", $16); year[a]++}END{for (i in year){print i "\t" year[i]}}' item.txt | sort -n -k1
@@ -113,7 +124,33 @@ Year    #Items
 2021    11295
 2022    3336
 ```
+#### Taxa
 
-#### Queries
+The taxa and the year they where identified using text mining tools TaxonFinder and gnfinder.
+```
+gawk -F"\t" '(NR>1){a=gensub(/^([0-9]{4})-(.+)/,"\\1","g", $4); year[a]++}END{for (i in year){print i "\t" year[i]}}' pagename.txt
+```
+
+```
+2007    3603082
+2008    25597672
+2009    30642203
+2010    14481524
+2011    9487431
+2012    9508568
+2013    20241807
+2014    7269728
+2015    6251942
+2016    9055910
+2017    7388412
+2018    5203641
+2019    6020302
+2020    34752817
+2021    2095996
+2022    437725
+```
+
+### Marine biodiversity in BHL
+
 
 
