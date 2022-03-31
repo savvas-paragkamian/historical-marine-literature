@@ -12,14 +12,14 @@
 This repository hosts scripts and queries in order to quantify the digitised
 historical marine literature about biodiversity which hasn't been curated.
 
-The goal is to provide a rough estimate of the work ahead towards the 
+The goal is to provide an estimation of the work ahead towards the 
 marine biodiversity document rescue.
 
-The road to rescue data lies far ahead from digitisation which
-still is the first crutial step. Three subsequent but equally hard tasks
-remain. The transcription of the text in these documents, the 
+The process of rescue data lies requires additional efford after the digitisation
+which still is the first crutial step. Three subsequent but equally hard tasks
+remain. These steps are the transcription of the text in these documents, the 
 recognition of the containing entities and their mapping to standardised
-identifiers. 
+identifiers.
 
 Lastly, the publication of these data to public repositories, like OBIS 
 and GBIF, is the last step for their rescue and their synthesis with 
@@ -27,9 +27,9 @@ current data.
 
 ## OBIS
 
-OBIS aggragates data from medOBIS and eurOBIS among others. Is the 
-realisation of the Census of Marine Life that originated at the late
-90s. 
+OBIS aggragates marine data directly from users or from medOBIS and eurOBIS 
+among others. Is the realisation of the Census of Marine Life that originated 
+at the late 90s.
 
 To download the full dataset of OBIS the command is the following:
 
@@ -46,8 +46,8 @@ we used separate scripts, written in AWK, for statistics.
 Script [obis_occurrences_datasets.awk](https://github.com/savvas-paragkamian/historical-marine-literature/blob/main/scripts/obis_occurrences_datasets.awk)
 returns a tab-separeted file with columns : year number_datasets number_occurrences.
 
-So, our analysis showed that in OBIS there are 223 datasets that contain 1600038
-in the period 1753-1960. 
+Our analysis showed that in OBIS there are 223 datasets that contain 1600038 
+occurrences, 46 thousand species and 38 phyla in the period 1753-1960. 
 
 Using the script [obis_taxonomy_summary.awk](https://github.com/savvas-paragkamian/historical-marine-literature/blob/main/scripts/obis_taxonomy_summary.awk)
 we extract the phylum statistics of OBIS datasets before 1960.
@@ -222,6 +222,7 @@ the keywords *marine*, *ocean*, *fisheries*, *sea*.
 In addition, all returned item are published before 1960.
 
 This command on results summarises the subsequent statistics:
+
 ```
 gawk -F"\t" '(NR>1 && $6>99){item[$1]=1; pages+=$8; lang[$7]++; year_bhl[$9]++}END{print length(item) RS pages; for (i in lang){print i FS lang[i]}; for (y in year_bhl){print y FS year_bhl[y]}}' bhl_search_results.txt
 ```
