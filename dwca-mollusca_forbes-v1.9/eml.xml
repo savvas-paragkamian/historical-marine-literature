@@ -1,0 +1,222 @@
+<eml:eml xmlns:eml="eml://ecoinformatics.org/eml-2.1.1"
+         xmlns:dc="http://purl.org/dc/terms/"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="eml://ecoinformatics.org/eml-2.1.1 http://rs.gbif.org/schema/eml-gbif-profile/1.1/eml.xsd"
+         packageId="http://ipt.medobis.eu/resource?id=mollusca_forbes/v1.9" system="http://gbif.org" scope="system"
+         xml:lang="eng">
+
+<dataset>
+  <alternateIdentifier>http://ipt.medobis.eu/resource?r=mollusca_forbes</alternateIdentifier>
+  <title xml:lang="eng">Edward Forbes. Report on the Mollusca and Radiata of the Aegean Sea, and on their distribution, considered as bearing on Geology. 13th Meeting of the British Association for the Advancement of Science, London, 1844.</title>
+      <creator>
+    <individualName>
+        <givenName>Dimitra</givenName>
+      <surName>Mavraki</surName>
+    </individualName>
+    <organizationName>Hellenic Centre for Marine Research</organizationName>
+    <address>
+        <deliveryPoint>Former U.S. Base of Gournes</deliveryPoint>
+        <city>Heraklion</city>
+        <administrativeArea>Crete</administrativeArea>
+        <postalCode>71500</postalCode>
+        <country>GR</country>
+    </address>
+    <phone>+302810337740</phone>
+    <electronicMailAddress>dmavraki@hcmr.gr</electronicMailAddress>
+      </creator>
+      <creator>
+    <individualName>
+        <givenName>Georgia</givenName>
+      <surName>Sarafidou</surName>
+    </individualName>
+    <organizationName>Hellenic Centre for Marine Research</organizationName>
+    <address>
+        <deliveryPoint>Former U.S. Base of Gournes</deliveryPoint>
+        <city>Heraklion</city>
+        <administrativeArea>Crete</administrativeArea>
+        <postalCode>71500</postalCode>
+        <country>GR</country>
+    </address>
+    <phone>+302810337740</phone>
+    <electronicMailAddress>g.sarafidou@hcmr.gr</electronicMailAddress>
+      </creator>
+      <metadataProvider>
+    <individualName>
+        <givenName>Dimitra</givenName>
+      <surName>Mavraki</surName>
+    </individualName>
+    <organizationName>Hellenic Centre for Marine Research</organizationName>
+    <positionName>Data Manager</positionName>
+    <address>
+        <deliveryPoint>Former U.S. Base of Gournes</deliveryPoint>
+        <city>Heraklion</city>
+        <administrativeArea>Crete</administrativeArea>
+        <postalCode>71500</postalCode>
+        <country>GR</country>
+    </address>
+    <phone>+302810337740</phone>
+    <electronicMailAddress>dmavraki@hcmr.gr</electronicMailAddress>
+      </metadataProvider>
+      <associatedParty>
+    <individualName>
+        <givenName>Vasilis</givenName>
+      <surName>Gerovasileiou</surName>
+    </individualName>
+    <organizationName>Hellenic Centre for Marine Research</organizationName>
+    <address>
+        <deliveryPoint>Former U.S. Base of Gournes</deliveryPoint>
+        <city>Heraklion</city>
+        <administrativeArea>Crete</administrativeArea>
+        <postalCode>71500</postalCode>
+        <country>GR</country>
+    </address>
+    <phone>+302810337742</phone>
+    <electronicMailAddress>vgerovas@hcmr.gr</electronicMailAddress>
+    <role>principalInvestigator</role>
+      </associatedParty>
+  <pubDate>
+      2021-09-30
+  </pubDate>
+  <language>eng</language>
+  <abstract>
+    <para>A historical dataset, by Edward Forbes, Professor of Botany in King&apos;s College, London. This digitised report, requested by the British Association, refers to the Mollusca and Radiata inhabiting the Aegean and the Red Sea. The data upon which this report is founded have been entirely derived from a voyage of 18 months to the Aegean. The calculations have been based upon more than 100 fully recorded dredging operations in various depths and in many localities. The digitization process concerns the Appendix of the Report, which refers to the Examples of Dredging Papers, selected in order to show the associations of species in several regions. The numerous dredging operations on which this Report is founded were all registered in a similar manner. </para>
+  </abstract>
+      <keywordSet>
+            <keyword>Sampling event</keyword>
+        <keywordThesaurus>GBIF Dataset Type Vocabulary: http://rs.gbif.org/vocabulary/gbif/dataset_type.xml</keywordThesaurus>
+      </keywordSet>
+      <keywordSet>
+            <keyword>Historical Dataset</keyword>
+        <keywordThesaurus>none</keywordThesaurus>
+      </keywordSet>
+      <keywordSet>
+            <keyword>Mollusca</keyword>
+        <keywordThesaurus>WoRMS</keywordThesaurus>
+      </keywordSet>
+  <additionalInfo>
+    <para>The Historical Report is available online through the Biodiversity Heritage Library at: https://www.biodiversitylibrary.org/page/12920789#page/176/mode/1up</para>
+  </additionalInfo>
+  <intellectualRights>
+    <para>To the extent possible under law, the publisher has waived all rights to these data and has dedicated them to the <ulink url="http://creativecommons.org/publicdomain/zero/1.0/legalcode"><citetitle>Public Domain (CC0 1.0)</citetitle></ulink>. Users may copy, modify, distribute and use the work, including for commercial purposes, without restriction.</para>
+  </intellectualRights>
+  <distribution scope="document">
+    <online>
+      <url function="information">https://www.biodiversitylibrary.org/page/12920789#page/176/mode/1up</url>
+    </online>
+  </distribution>
+  <coverage>
+      <geographicCoverage>
+          <geographicDescription>Mediterranean Sea, Aegean Sea. Sampling Marine Stations are from both Greece and Turkey.</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>23.643</westBoundingCoordinate>
+          <eastBoundingCoordinate>28.125</eastBoundingCoordinate>
+          <northBoundingCoordinate>41.03</northBoundingCoordinate>
+          <southBoundingCoordinate>35.532</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+          <temporalCoverage>
+              <rangeOfDates>
+                  <beginDate>
+                    <calendarDate>1841-05-29</calendarDate>
+                  </beginDate>
+                <endDate>
+                  <calendarDate>1843-12-23</calendarDate>
+                </endDate>
+              </rangeOfDates>
+          </temporalCoverage>
+          <taxonomicCoverage>
+              <generalTaxonomicCoverage>Mollusca and Radiata by Forbes. It is worth mentioning that the taxonomic evaluation was difficult and thus time-consuming. HCMR team asked taxonomic specialists for specific species in order to match the species with a WoRMS ID and in particular for two species: Pleurobranchus calyptraeoides and Pleurobranchus sordidus new entries in Molluscabase (https://www.molluscabase.org/) were created. </generalTaxonomicCoverage>
+              <taxonomicClassification>
+                  <taxonRankName>phylum</taxonRankName>
+                <taxonRankValue>Mollusca</taxonRankValue>
+              </taxonomicClassification>
+              <taxonomicClassification>
+                  <taxonRankName>phylum</taxonRankName>
+                <taxonRankValue>Echinodermata</taxonRankValue>
+              </taxonomicClassification>
+              <taxonomicClassification>
+                  <taxonRankName>phylum</taxonRankName>
+                <taxonRankValue>Cnidaria</taxonRankValue>
+              </taxonomicClassification>
+              <taxonomicClassification>
+                  <taxonRankName>phylum</taxonRankName>
+                <taxonRankValue>Arthropoda</taxonRankValue>
+              </taxonomicClassification>
+              <taxonomicClassification>
+                  <taxonRankName>phylum</taxonRankName>
+                <taxonRankValue>Foraminifera</taxonRankValue>
+              </taxonomicClassification>
+              <taxonomicClassification>
+                  <taxonRankName>phylum</taxonRankName>
+                <taxonRankValue>Annelida</taxonRankValue>
+              </taxonomicClassification>
+              <taxonomicClassification>
+                  <taxonRankName>phylum</taxonRankName>
+                <taxonRankValue>Brachiopoda</taxonRankValue>
+              </taxonomicClassification>
+              <taxonomicClassification>
+                  <taxonRankName>phylum</taxonRankName>
+                <taxonRankValue>Bryozoa</taxonRankValue>
+              </taxonomicClassification>
+          </taxonomicCoverage>
+  </coverage>
+  <purpose>
+    <para>This historical dataset was digitized in the framework of EMODnet Biology project, under Work Package 3 &quot;Data archaeology and rescue&quot;. This work has been financially supported by the EC DG-MARE (EMODnet Observation and Data network - Lot5 – Biology) and partly by the Greek Government under the GSRT and the National Strategic Reference Framework (LifeWatchGreece Research Infrastructure (ESFRI) project - MIS 384676).</para>
+  </purpose>
+  <maintenance>
+    <description>
+      <para></para>
+    </description>
+    <maintenanceUpdateFrequency>unkown</maintenanceUpdateFrequency>
+  </maintenance>
+
+      <contact>
+    <individualName>
+        <givenName>Dimitra</givenName>
+      <surName>Mavraki</surName>
+    </individualName>
+    <organizationName>Hellenic Centre for Marine Research</organizationName>
+    <address>
+        <deliveryPoint>Former U.S. Base of Gournes</deliveryPoint>
+        <city>Heraklion</city>
+        <administrativeArea>Crete</administrativeArea>
+        <postalCode>71500</postalCode>
+        <country>GR</country>
+    </address>
+    <phone>+302810337740</phone>
+    <electronicMailAddress>dmavraki@hcmr.gr</electronicMailAddress>
+      </contact>
+  <methods>
+        <methodStep>
+          <description>
+            <para>Information on species, abundance, stations, and dates were extracted from the dredging papers. </para>
+          </description>
+        </methodStep>
+      <sampling>
+        <studyExtent>
+          <description>
+            <para>Several locations were sampled in both Greece and Turkey. </para>
+          </description>
+        </studyExtent>
+        <samplingDescription>
+          <para>The digitised information is a list of examples of Dredging Papers, selected in order to show the associations of species in the several examined regions. The numerous dredging operations on which the original Report is founded were all registered in a similar manner. </para>
+        </samplingDescription>
+      </sampling>
+      <qualityControl>
+        <description>
+          <para>Marine Regions is used as controlled vocabulary for marine locations, while for taxonomy WoRMS was used. </para>
+        </description>
+      </qualityControl>
+  </methods>
+</dataset>
+  <additionalMetadata>
+    <metadata>
+      <gbif>
+          <dateStamp>2021-08-05T11:02:26.233+03:00</dateStamp>
+          <hierarchyLevel>dataset</hierarchyLevel>
+            <citation>Mavraki D., Sarafidou G., Legaki A., Nikolopoulou S., and V. Gerovasileiou (2021). Digitization of the dredging papers included in the Report on the Mollusca and Radiata of the Aegean Sea, and on their distribution, considered as bearing on Geology by Edward Forbes, 13th Meeting of the British Association for the Advancement of Science, London, 1844.</citation>
+          <dc:replaces>http://ipt.medobis.eu/resource?id=mollusca_forbes/v1.9.xml</dc:replaces>
+      </gbif>
+    </metadata>
+  </additionalMetadata>
+</eml:eml>
