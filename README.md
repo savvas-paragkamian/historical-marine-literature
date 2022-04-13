@@ -1,13 +1,14 @@
 # Historical marine biodiversity literature
 
-* [Introduction](#introduction)
+* [Historical documents](#historical-documents)
 * [OBIS](#obis)
 * [BHL](#bhl)
 * [Summary-BHL](#summary)
 * [Marine-biodiversity-BHL](#marine-biodiversity-in-bhl)
-* [Conclusions](#conclusions)
+* [Summary](#summery)
+* [Case study]($case-study)
 
-## Intoduction
+# Historical documents
 
 This repository hosts scripts and queries in order to quantify the digitised
 historical marine literature about biodiversity which hasn't been curated.
@@ -272,7 +273,7 @@ year    number of items
 2022    1
 ```
 
-## Conclusions
+## Summary
 
 A lot of effort on the digitisation processes of these valuable and indespensable
 documents has being realised. Yet the rescue of the marine biodiversity data 
@@ -284,3 +285,16 @@ Hence, substantial effort is required to compile these data to public
 repositories like [OBIS](https://obis.org). The rescue process requires human 
 curation, although current development of Information Extraction tools that 
 facilitate Named Entity Recognition can accelarate this process.
+
+# Case study
+The digitised document of the “Report on the Mollusca and Radiata of the Aegean
+Sea, and on their distribution, considered as bearing on Geology. 13th Meeting 
+of the British Association for the Advancement of Science, London, 1844” 
+is available here: [document](https://www.biodiversitylibrary.org/page/12920789)
+
+The published dataset of this documents has been uploaded to MedObis and is available
+here: [DwC-A](http://ipt.medobis.eu/resource?r=mollusca_forbes).
+
+The rescue process resulted in a Darwin Core Archive file with 530 occurrence 
+records, between 17 different stations and 260 taxa; covering 217 species and 
+33 genera.
