@@ -1,7 +1,11 @@
 #!/usr/bin/env Rscript
-library(worrms)
+library(worrms) # for API calls to WoRMS
+library(obistools) # Quality control
+library(EMODnetBiocheck) # Quality control
 
 # load the files
+case_study_event <- read.delim("../dwca-mollusca_forbes-v1.9/event.txt", sep="\t", header=T)
+case_study_emof <- read.delim("../dwca-mollusca_forbes-v1.9/extendedmeasurementorfact.txt", sep="\t", header=T)
 case_study <- read.delim("../dwca-mollusca_forbes-v1.9/occurrence.txt", sep="\t", header=T)
 print("dimensions of the dataset")
 print(dim(case_study))
@@ -23,3 +27,13 @@ worms_records_d <- do.call(rbind, worms_records)
 # count the ranks of each taxon
 print("number of taxa of each rank")
 table(worms_records_d[,8])
+
+
+# Quality control
+#loopcheckIPTdataset("http://ipt.medobis.eu/resource?r=mollusca_forbes", tree="yes")
+IPTreport <- checkdataset(Occurrence = case_study, eMoF = case_study_emof) #Event = case_study_event)
+
+#)
+
+### debugging function checkdataset for the event
+
