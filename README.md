@@ -38,6 +38,9 @@ To download the full dataset of OBIS the command is the following:
 wget https://obis-datasets.ams3.digitaloceanspaces.com/exports/obis_20220114.csv.zip
 ```
 
+In case only the parquet file is provided, there is a python script to transform 
+to tsv in this repo.
+
 The data used here are `obis_20220114.csv.zip`. For more information
 please visit [OBIS Data Access](https://obis.org/manual/access/)
 
